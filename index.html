@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel raasta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tail.select@0.5.15/css/bootstrap4/tail.select-invert.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tail.select@0.5.15/js/tail.select.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="#" id="brand">
+            <img src="main_logo.png"></a>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Destinations</a></li>
+            <li><a href="">Blogs</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Gallery</a></li>
+        </ul>   
+        <div id="contact_nav">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0BA1F0" width="18px" height="18px">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <p id="contact_no">+91 9532455040</p>
+        </div> 
+        <button id="search_nav">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="#FFFFFF" viewBox="0 0 24 24" width="24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+        </button>
+        <svg id="ham" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="28px" height="28px"><path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </nav>
+    
+    <div id="carousel-wrapper">
+        <section id="carousel">
+            <div class="caro" id="lastclone">
+                <h1>Some Cool Great Heading3</h1>
+                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, nisi!</h3>
+                <button class="primary">Book Now</button>
+            </div>         
+            <div class="caro">
+                <h1>Some Cool Great Heading</h1>
+                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, nisi!</h3>
+                <button class="primary">Book Now</button>
+            </div>
+            <div class="caro">
+                <h1>Some Cool Great Heading2</h1>
+                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, nisi!</h3>
+                <button class="primary">Book Now</button>
+            </div>   
+            <div class="caro">
+                <h1>Some Cool Great Heading3</h1>
+                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, nisi!</h3>
+                <button class="primary">Book Now</button>
+            </div>   
+            <div class="caro" id="firstclone">
+                <h1>Some Cool Great Heading</h1>
+                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, nisi!</h3>
+                <button class="primary">Book Now</button>
+            </div>           
+        </section>
+        <div id="carousel-buttons">
+            <button id="next">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                </svg>
+            </button>
+            <button id="prev">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                </svg>
+            </button>
+        </div>        
+    </div>
+
+    <section id="search">
+        <div id="search-data">
+            <h2>What do you want to do ?</h2>
+            <select class="select">
+                <option>Book Flight</option>
+                <option>Book Hotel</option>
+                <option>Book Tour</option>
+                <option>Book Guide</option>
+                <option>Plan Event</option>
+            </select>
+            <input type="text" id="destination" placeholder="Enter Destination">
+            <input type="text" id="date" placeholder="Select Date" data-input>
+            <button class="primary">Search</button>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <h1>Top Destinations</h1>
+        <div id="grid">
+
+            <div class="grid-item">
+                <h2>Manali</h2>
+            </div>
+
+            <div class="grid-item">
+                <h2>varanasi</h2>
+            </div>
+
+            <div class="grid-item">
+                <h2>Goa</h2>
+            </div>
+    
+            <div class="grid-item">
+                <h2>Mumbai</h2>
+            </div>
+
+            <div class="grid-item">
+                <h2>Jaipur</h2>
+            </div>
+    
+            <div class="grid-item">
+                <h2>Delhi</h2>
+            </div>            
+        </div>                        
+    </section>
+
+    <section id="subscribe">
+        <div id="data">
+            <h1>Subscribe To our newsletter</h1>
+            <h4>Subscribe newsletter to get offers and 
+                <br> new places to discover.
+            </h4>
+        </div>
+        <input type="text" id="email" placeholder="Enter Email">
+        <button class="primary">Submit</button>
+    </section>
+
+    <section id="pacakges">
+        <div id="data">
+            <h1>Special Pacakges</h1>
+            <h4>get exciting offers & discount on our tour pacakges</h4>
+        </div>
+        <div id="pacakges-container">
+            <div id="left-content">
+                <img src="pack1.jpg" >
+                <h1>Wonderful place try new expreience now !!</h1>
+                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, iure. Earum dolore ab id quis nisi sint nulla dolor debitis laboriosam? Accusantium modi blanditiis consectetur officiis, non doloribus sapiente</h4>
+                <button class="secondary">More Info</button>     
+            </div>
+            <div id="right-content">
+                <div class="card">
+                    <img src="pack2.jpg" >
+                    <div class="card-data">
+                        <h1>Zeher Place1 hai !!</h1>
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis itaque architecto minus nisi. Dicta, nam?</h4>
+                    <button class="secondary">More Info</button>     
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pack2.jpg" >
+                    <div class="card-data">
+                        <h1>Zeher Place2 hai !!</h1>
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis itaque architecto minus nisi. Dicta, nam?</h4>
+                    <button class="secondary">More Info</button>     
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pack2.jpg" >
+                    <div class="card-data">
+                        <h1>Zeher Place3 hai !!</h1>
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis itaque architecto minus nisi. Dicta, nam?</h4>
+                    <button class="secondary">More Info</button>     
+                    </div>
+                </div>                                
+            </div>
+        </div>
+        <button class="secondary">More Plans >></button>
+    </section>
+
+    <section id="testimonials">
+        <h1>Testimonials From our clients</h1>
+        <div id="test-imgs">
+            <img src="test1.png" >
+            <img src="test1.png" >
+        </div>
+    </section>
+
+    <section id="custom">
+        <div id="content">
+            <div id="left-content">
+                <h1>Didn't find your <br>
+                    Pacakge ? <br>
+                    Feel Free To ask us <br>
+                    We will make it for you
+                </h1>
+                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam velit fugiat, veritatis architecto nesciunt inventore aspernatur animi est error autem eos, eveniet laborum ipsum non voluptatibus dolorem consequatur amet adipisci. Consequatur ut alias debitis eligendi.</h4>                
+                <button class="secondary">Request Custom Pacakge</button>
+            </div>
+            <div id="right-content">
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h1>Our Services</h1>
+        <div class="services">
+            <div class="service">
+                <img src="service1.png" >
+                <h2>Air Tickting</h2>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, enim.</h5>
+            </div>
+            <div class="service">
+                <img src="service2.png" >
+                <h2>Tour Planning</h2>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, enim.</h5>
+            </div>
+            <div class="service">
+                <img src="service3.png" >
+                <h2>Hotel Booking</h2>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, enim.</h5>
+            </div>
+            <div class="service">
+                <img src="service4.png" >
+                <h2>Event Planning</h2>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, enim.</h5>
+            </div>
+            <div class="service">
+                <img src="service5.png" >
+                <h2>Bus Booking</h2>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, enim.</h5>
+            </div>
+            <div class="service">
+                <img src="service6.png" >
+                <h2>Guide Booking</h2>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, enim.</h5>
+            </div>
+        </div>
+    </section>
+
+    <section id="blogs">
+        <div id="routes">
+            <h1>Latest From Our Blogs</h1>
+            <a href="#">View all</a>
+        </div>
+        <div class="blogs">
+            <div class="blog">
+                <img src="blogs.jpg" >
+                <p>13 Oct 2018</p>
+                <h2>Best Moment With Family</h2>
+            </div>
+            <div class="blog">
+                <img src="blogs.jpg" >
+                <p>13 Oct 2018</p>
+                <h2>Best Moment With Family</h2>
+            </div>
+            <div class="blog">
+                <img src="blogs.jpg" >
+                <p>13 Oct 2018</p>
+                <h2>Best Moment With Family</h2>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="info">
+            <img src="main_logo.png" >
+            <h3>Company Address</h3>
+            <p>floor 6, flatNo 17, <br>
+            goregao east film city, <br>
+            mumbai</p>
+            <br>
+            <p>+91 9532455040</p>
+            <br>
+            <p>info@travelraasta.com</p>
+        </div>
+        <div id="navigation">
+            <h2>Navigation Links</h2>
+            <a href="#" class="link">Home</a>
+            <a href="#" class="link">Blogs</a>
+            <br><br>
+            <a href="#" class="link">About</a>
+            <a href="#" class="link">Gallery</a>
+            <br><br>
+            <a href="#" class="link">Contact</a>
+            <br><br>
+            <a href="#" class="link">Services</a>
+        </div>
+    </footer>
+
+
+    <!-- <div id="test" style="height: 200vh;">
+        avneetians
+    </div> -->
+</body>
+</html>
