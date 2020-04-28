@@ -56,14 +56,14 @@ carousel.addEventListener('mouseout',()=>{
 })
 
 // automate the process
-// setInterval(() => {
-//     if(counter == 0 || counter == elements.length - 1 || isMouseOver){
-//         return;
-//     }
-//     carousel.style.transition = "transform 1s ease-in";
-//     counter++;
-//     carousel.style.transform = `translateX(-${counter*size}%)`;
-// }, 5000);
+setInterval(() => {
+    if(counter == 0 || counter == elements.length - 1 || isMouseOver){
+        return;
+    }
+    carousel.style.transition = "transform 1s ease-in";
+    counter++;
+    carousel.style.transform = `translateX(-${counter*size}%)`;
+}, 5000);
 
 // select dropdown
 
@@ -77,3 +77,38 @@ flatpickr("#date", {
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
 });
+
+// destinations
+const grid = document.getElementById('grid');
+
+let clientX,initOffset = 18;
+grid.addEventListener('touchstart',(e)=>{
+    clientX = Math.round(e.touches[0].clientX);
+})
+
+grid.addEventListener('touchmove',(e)=>{
+    let check = initOffset;
+    let offset = Math.round(e.touches[0].clientX) - clientX;
+    
+    if(Math.abs(offset) >= 200){
+        check = grid.getBoundingClientRect().left;
+    }
+
+    if(!isAllowed(check,offset)){
+        return;
+    }
+
+    grid.style.transform = `translateX(${offset + initOffset}px)`
+})
+
+function isAllowed(check,offset){
+    if((check >= 18 && offset > 0) || (check <= -838 && offset <0)){
+        return false;
+    }else {
+        return true;
+    }
+}
+
+grid.addEventListener('touchend',()=>{
+    initOffset = grid.getBoundingClientRect().left;
+})
