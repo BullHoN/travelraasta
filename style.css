@@ -22,6 +22,11 @@ a {
     text-decoration: none;
 }
 
+.secondary {
+    background: var(--secondaryColor);
+    color:white;
+}
+
 :root {
     --primaryColor:#0BA1F0;
     --secondaryColor:#00293F;
@@ -544,17 +549,28 @@ nav #ham {
 #pacakges {
     height: auto;
     background: var(--background);
-    padding:5vh 10% 5vh 10%;
+    padding:5vh 10% 10vh 10%;
+}
+
+#pacakges a {
+    display: none;
 }
 
 #pacakges #data{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10vh;
+    align-items: center;
 }
 
 #pacakges #data button {
     margin: 0px;
+}
+
+#pacakges #data a {
+    display: block;
+    font-weight: bolder;
+    color:var(--secondaryColor);
 }
 
 #pacakges #button-group {
@@ -574,19 +590,27 @@ nav #ham {
 
 .cards {
     width: 100%;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+
+
 .card {
-    margin-left: 5%;
+    margin-left: 3%;
     cursor: pointer;
     width: 30%;
     background: white;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
 }
 
-.card:nth-child(1){
+.card:nth-child(1),.card:nth-child(4){
     margin-left: 0px;
+}
+
+.card:nth-child(4),.card:nth-child(5),.card:nth-child(6) {
+    margin-top: 3%;
 }
 
 .card img {
@@ -641,6 +665,16 @@ nav #ham {
     #pacakges #data {
         margin-bottom: 5vh;
     }
+    #pacakges #data a{
+        display: none;
+    } 
+    #pacakges a {
+        display: block;
+        text-align: center;
+        background: var(--secondaryColor);
+        color:white;
+        padding:5px 10px;
+    }
     .cards {
         display: block;
     }
@@ -648,6 +682,9 @@ nav #ham {
         margin:0px;
         width: 100%;
         margin-bottom: 5vh;
+    }
+    .card:nth-child(4),.card:nth-child(5),.card:nth-child(6) {
+        display: none;
     }
     .inclusions div {
         margin-left: 10px;
@@ -660,6 +697,9 @@ nav #ham {
      width: 100%;
      background: var(--secondaryColor);
      padding:5vh 0px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
  }
 
  #testimonials h1 {
@@ -669,37 +709,52 @@ nav #ham {
      margin-bottom: 5vh;
  }
 
- #test-imgs {
-     display: flex;
-     width: 60%;
-     margin:auto;
-     justify-content: space-between;
-     margin-bottom: 5vh;
+ #test-wrapper{
+     width: 55%;
+     overflow: hidden;
  }
 
- #test-imgs img {
-     width: 45%;
-     height: 20vh;
- }
+.testimonials {
+    width: 100%;
+    transition: transform 1s ease-in-out;
+    display: inline-flex;
+}
+
+.testimonials img {
+    margin-right: 5px;
+    width: 49.5%;
+    height: 20vh;
+}
+
+#test-buttons {
+    margin-top: 2%;
+    display: inline-flex;
+}
+
+#test-buttons .box {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background: white;
+}
+
+#test-buttons .box:nth-child(2){
+    margin: 0px 5px;
+}
 
 @media(max-width:500px){
 
+    #test-wrapper {
+        width: 90%;
+    }
+
+    .testimonials img {
+        margin-right: 0px;
+        width: 100%;
+    }
+
     #testimonials h1 {
         font-size: 24px;
-    }
-
-    #test-imgs{
-        width: 80%;
-        flex-direction: column;
-    }
-
-    #test-imgs img {
-        width: 100%;
-        height: 15vh;
-    }
-
-    #test-imgs img:nth-child(2){
-        margin-top: 5vh;
     }
 
 }
@@ -780,6 +835,8 @@ nav #ham {
     }
 }
 
+/* services */
+
 #services {
     width: 100%;
     height: auto;
@@ -808,7 +865,7 @@ nav #ham {
 }
 
 .service img {
-    width: 50%;
+    width: 45%;
     margin-left: 50%;
     transform:translateX(-50%);
     height: 15vh;
@@ -834,6 +891,30 @@ nav #ham {
 
 @media(max-width:500px){ 
 
+    #services {
+        padding: 5vh 0px;
+    }
+
+    #services h1 {
+        font-size: 32px;
+    }
+
+    .service {
+        width: 50%;
+    }
+
+    .service img {
+        height: 10vh;
+    }
+
+    .service h2 {
+        font-size: 18px;
+    }
+
+    .service h5 {
+        font-size: 12px;
+    }
+
     .service:nth-child(2) , .service:nth-child(3) , .service:nth-child(5){
         margin:0;
         margin-bottom: 24px;
@@ -844,8 +925,14 @@ nav #ham {
     }
 }
 
+/* blogs */
+
 #blogs {
     padding: 10vh 0px;
+}
+
+#blogs > a {
+    display: none;
 }
 
 #blogs #routes {
@@ -894,13 +981,15 @@ nav #ham {
         margin-bottom: 5vh;
     }
 
-    #routes a , #routes h1 {
-        color:var(--secondaryColor);
-        font-size: 22px;
+    #blogs a {
+        display: block;
+        margin: 0px 10%;
+        padding:10px 20px;
+        text-align: center;
     }
 
     #routes a {
-        font-size: 16px;
+        display: none;
     }
 
     .blog {

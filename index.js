@@ -112,3 +112,78 @@ function isAllowed(check,offset){
 grid.addEventListener('touchend',()=>{
     initOffset = grid.getBoundingClientRect().left;
 })
+
+
+// testimonials
+
+const boxes = document.querySelectorAll('.box');
+const testimonials = document.querySelector('.testimonials'); 
+
+let activeIndex = 0,disableAuto = false;
+boxes[0].style.background = "var(--primaryColor)";
+
+boxes.forEach((box,index)=>{
+    box.addEventListener('click',()=>{
+        if(activeIndex != index){
+            decideAuto();
+            removeAccept(index);
+            box.style.background = "var(--primaryColor)";
+            slideTheTestimonials(index);
+            activeIndex = index;
+        }
+    })
+})
+
+function decideAuto(){
+    disableAuto = true;
+    setTimeout(()=>{
+        disableAuto = false;
+    },15000)
+}
+
+function slideTheTestimonials(index){
+    if(index > activeIndex){
+        testimonials.style.transform = `translateX(-${(index)*100}%)`;
+    }else {
+        if(index == 0){
+            testimonials.style.transform = `translateX(${0}%)`;     
+        }else {
+            testimonials.style.transform = `translateX(-${100}%)`;  
+        }
+    }
+}
+
+function removeAccept(index){
+    boxes.forEach((box,i)=>{
+        if(i != index){
+            box.style.background = "white";
+        }
+    })
+}
+
+
+let i = 0;
+let add = true;
+
+setInterval(()=>{
+
+    if(!disableAuto){
+        removeAccept(i);
+        boxes[i].style.background = "var(--primaryColor)";
+        slideTheTestimonials(i);
+        activeIndex = i;
+
+        if(i == 2){
+            add = false;
+        }else if(i == 0){
+            add = true;
+        }
+
+        if(add){
+            i++;
+        }else {
+            i--;
+        }
+    }
+
+},3000)
