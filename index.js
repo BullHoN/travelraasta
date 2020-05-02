@@ -187,3 +187,95 @@ setInterval(()=>{
     }
 
 },3000)
+
+
+const plan_button = document.getElementById('plan_button');
+const plan_model = document.getElementById('planTour_model');
+
+plan_button.addEventListener('click',()=>{
+    openModal();
+})
+
+tail.select('.destination',{
+    search:true,
+    deselect:true,
+    height:200,
+    placeholder:"Select destination",
+    width:'100%'
+})
+
+tail.select('.from',{
+    search:true,
+    deselect:true,
+    height:200,
+    openAbove:true,
+    placeholder:"From Location...",
+    width:'100%'
+})
+
+tail.select('.nopass',{
+    deselect:true,
+    placeholder:"Passengers",
+    width:'100%'
+})
+
+tail.select('.hotelp',{
+    deselect:true,
+    placeholder:"hotel plans",
+    width:'100%'    
+})
+
+tail.select('.meals',{
+    deselect:true,
+    placeholder:"Select Meals",
+    width:'100%'    
+})
+
+// modal
+const modal = document.getElementById('planTour_model');
+const modal_button = document.getElementById('close');
+const model_next = document.getElementById('model_next');
+const model_back = document.getElementById('model_back');
+const model_content = document.getElementById('model-content');
+
+modal_button.addEventListener('click',()=>{
+    closeModal()
+})
+
+function openModal(){
+    plan_model.style.display = "block";
+}
+
+function closeModal(){
+    modal.style.display = "none";
+}
+
+let currentStep = 0,modaloffset = 0;
+model_next.addEventListener('click',()=>{
+    if(modaloffset == 80) { return; }
+    slideModal(currentStep,++currentStep);
+    // check for values!!
+    // var e = document.querySelector(".destination");
+    // console.log(e.options[e.selectedIndex].value);
+})
+
+model_back.addEventListener('click',()=>{
+    if(modaloffset == 0) { return; }
+    slideModal(currentStep,--currentStep);
+})
+
+
+function slideModal(from,to){
+    if(from > to){
+        modaloffset -= 20;
+        model_content.style.transform = `translateX(-${modaloffset}%)`;
+    }else {
+        modaloffset += 20;
+        model_content.style.transform = `translateX(-${modaloffset}%)`;
+    }
+}
+
+// automate the process for every 30-40s
+// setTimeout(()=>{
+//     openModal();
+// },20000)

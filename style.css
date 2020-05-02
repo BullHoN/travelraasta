@@ -603,6 +603,11 @@ nav #ham {
     width: 30%;
     background: white;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card:nth-child(1),.card:nth-child(4){
@@ -1057,3 +1062,186 @@ footer {
 
 }
 
+
+/* plan a tour */
+
+#plantour {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+    padding: 7px;
+}
+
+#plantour button {
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    background: var(--primaryColor);
+    color:white;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#planTour_model {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10001;
+    background: rgba(0,0,0,0.6);
+}
+
+#model {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    height: 65vh;
+    background:#eee;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+#model-header {
+    padding: 10px 20px;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#333;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 1);
+}
+
+#head-action button{
+    background: transparent;
+    margin-left: 15px;
+}
+
+
+#model-content {
+    width: 500%;
+    display: inline-flex;
+    height: 52vh;
+    transition: transform 0.7s ease-in-out;
+}
+
+#model-content input {
+    padding:11px 20px;
+    width: 100%;
+    outline:none;
+    border:none;
+    border-radius: 3px;
+    background: #343a40;
+    color:#ffffff;
+}
+
+#model-content > div{
+    width: 20%;
+    /* border: 1px solid black; */
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.form-con{
+    text-align: start;
+}
+
+.form-con h3 {
+    margin-bottom: 5px;
+}
+
+
+#c2 #form {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border:1px solid blue; */
+}
+
+#c2 #form .form-con {
+    width: 45%;
+}
+ 
+#c2 #form .form-con:nth-child(3), #c3 #form .form-con:nth-child(2){
+    margin-top: 18px;
+}
+
+#c3 #form , #c4 #form{
+    margin-top: 24px;
+}
+
+#c4 #form .form-con:nth-child(2){
+    margin: 18px 0px;
+}
+
+#c4 img {
+    display: none;
+}
+
+#model-content img {
+    width: 100px;
+    height: 100px;
+}
+
+#c5 h3 {
+    margin-top: 25px;
+    text-align: end;
+}
+
+#c5 div {
+    padding: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#model-buttons {
+    height: 6vh;
+    display: flex;
+}
+
+#model-buttons button {
+    width: 50%;
+}
+
+#model_next {
+    background: var(--primaryColor);
+    color:white;
+}
+
+@media(max-width:500px){
+    #plantour {
+        display: block;
+    }
+
+    #model {
+        top:0px;
+        left:0px;
+        transform: none;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #model-content {
+        height: 87vh;
+    }
+
+    #c2 #form .form-con {
+        width: 100%;
+    }
+
+    #c2 #form .form-con:nth-child(2){
+        margin-top: 18px;
+    }
+
+    #c4 img {
+        display: inline;
+    }
+
+}
