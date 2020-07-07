@@ -192,9 +192,9 @@ setInterval(()=>{
 const plan_button = document.getElementById('plan_button');
 const plan_model = document.getElementById('planTour_model');
 
-plan_button.addEventListener('click',()=>{
-    openModal();
-})
+// plan_button.addEventListener('click',()=>{
+//     openModal();
+// })
 
 tail.select('.destination',{
     search:true,
@@ -279,3 +279,26 @@ function slideModal(from,to){
 // setTimeout(()=>{
 //     openModal();
 // },20000)
+
+
+// corona model
+const carouselButtons = document.querySelectorAll('#carousel button');
+const coronaModel = document.querySelector('#corona');
+
+document.getElementById('customPacCorona').addEventListener('click',()=>{
+    coronaModel.style.display = "block";
+})
+
+plan_button.addEventListener('click',()=>{
+    coronaModel.style.display = "block";
+})
+
+document.querySelector('#corona #close').addEventListener('click',()=>{
+    coronaModel.style.display = "none";
+})
+
+carouselButtons.forEach((caroButton)=>{
+    caroButton.addEventListener('click',()=>{
+        coronaModel.style.display = "block";
+    })
+})

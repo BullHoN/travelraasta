@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&display=swap');
+
+/* navbar */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+input , button {
+    outline:none;
+    border:none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.secondary {
+    background: var(--secondaryColor);
+    color:white;
+}
+
+:root {
+    --primaryColor:#0BA1F0;
+    --secondaryColor:#00293F;
+    --background:#F9FDFF;
+    --blendColor:rgb(201, 201, 201);
+    --textSecondary:#585858;
+}
+
+nav {
+    position: fixed;
+    width: 100vw;
+    height:10vh;
+    display: flex;
+    align-items: center;
+    box-shadow: -3px 0px 5px #00000040;
+    z-index: 10000;
+    background: #ffffff;
+    /* opacity: 0.8; */
+}
+
+nav #brand {
+    width: 15%;
+}
+
+nav img {
+    margin-left: 10%;
+    width: 90%;
+    height: 7.5vh;
+}
+
+nav ul {
+    width:65%;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav li {
+    margin-left: 3%;
+}
+
+nav li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav #contact_nav {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+nav #contact_nav svg {
+    margin-right: 5px;
+}
+
+nav #contact_nav p {
+    margin-right: 10%;
+}
+
+nav button {
+    cursor: pointer;
+    width: 5%;
+    height: 10vh;
+    border:none;
+    outline:none;
+    background: var(--primaryColor);
+}
+
+nav #ham {
+    display: none;
+}
+
+@media (max-width:500px){
+    nav ul{
+        position: absolute;
+        display: block;
+        top:10vh;
+        left:5%;
+        width: 90%;
+        background:#fafafa;
+        transition: 1s max-height;
+        overflow: hidden;
+        max-height: 0px;
+    }
+
+    nav .active {
+        max-height: 50vh;
+    }
+
+    nav ul li:nth-child(1){
+        margin-top: 20px;
+        color: var(--primaryColor);
+    }
+
+    nav ul li:nth-child(6){
+        margin-bottom: 20px;
+    }
+
+    nav ul li {
+        margin-left: 5%;
+        margin-bottom: 5px;
+        color: black;
+        font-weight: bold;
+    }
+
+    nav #contact_nav {
+        display: none;
+    }
+    nav #brand {
+        width: 70%;
+    }
+    nav #brand img {
+        margin-left: 5%;
+        width: 70%;
+    }
+    nav button {
+        width: 15%;
+    }
+    nav #ham {
+        width: 15%;
+        display: block;
+    }
+}

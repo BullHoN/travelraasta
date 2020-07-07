@@ -78,6 +78,7 @@ nav #contact_nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 nav #contact_nav svg {
@@ -199,7 +200,7 @@ nav #ham {
 
 .caro h1{
     font-weight: normal;
-    font-size: 55px;
+    font-size: 42px;
 }
 
 .caro h3 {
@@ -265,11 +266,11 @@ nav #ham {
         margin-top: 12px;
         text-align: center;
         width:90%;
-        font-size: 32px;
+        font-size: 22px;
     }
     .caro h3 {
         margin-top: 20px;
-        font-size: 16px;
+        font-size: 14px;
         width: 50%;
     }
     #carousel-buttons button{
@@ -978,6 +979,8 @@ nav #ham {
 
 .blog img {
     width: 100%;
+    height:30vh;
+    object-fit: cover;
 }
 
 @media(max-width:500px){
@@ -1065,7 +1068,7 @@ footer {
 
 /* plan a tour */
 
-#plantour {
+#plantour{
     display: none;
     position: fixed;
     bottom: 0;
@@ -1073,6 +1076,50 @@ footer {
     background: white;
     box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
     padding: 7px;
+}
+
+#corona {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10001;
+    background: rgba(0,0,0,0.6);  
+}
+
+#corona #close {
+    position: absolute;
+    right: 20px;
+    top:20px;
+}
+
+#corona #model {
+    overflow: hidden;
+}
+
+#corona-modal-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#corona-modal-content img {
+    width: 180px;
+    height: 180px;
+}
+
+#corona-contact {
+    position: absolute;
+    bottom:12px;
+    right:12px;
+    text-align: start;
+    padding: 24px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 #plantour button {
