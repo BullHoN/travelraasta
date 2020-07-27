@@ -321,6 +321,7 @@ nav #ham {
 .search-icon img {
     width: 55px;
     height: 55px;
+    margin-bottom: 5px;
 }
 
 @media(max-width:500px){
